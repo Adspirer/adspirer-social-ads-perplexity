@@ -2,7 +2,7 @@
   "name": "Adspirer Social Ads",
   "key": "adspirer-social-ads",
   "host": "perplexity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create Meta and TikTok ad campaigns. Research competitors, develop creative, analyze results, and optimize spending—with your approval.",
   "mcp": {
     "url": "https://mcp.adspirer.com/social-ads",

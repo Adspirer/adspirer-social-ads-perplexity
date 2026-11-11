@@ -18,13 +18,15 @@ skills to use it well. It covers Meta (Facebook and Instagram) and TikTok Ads. I
 
 ## Connect in Perplexity
 
-1. Open **Settings → Connectors** and choose **Custom connector → Remote**.
-2. Name it `Adspirer Social Ads` and enter the URL `https://mcp.adspirer.com/social-ads`.
-3. Sign in with your Adspirer account in the browser window.
-4. Connect your ad accounts at https://adspirer.ai/connections.
+1. In Perplexity, open **Computer** and choose **Connectors** in the left sidebar.
+2. Choose **+ Custom connector** in the top-right corner.
+3. Enter the name `Adspirer Social Ads`, a short description, and the MCP server URL `https://mcp.adspirer.com/social-ads`.
+4. Tick **I understand custom connectors can introduce risks** and choose **Add**.
+5. Perplexity opens the Adspirer authorization page. Sign in and approve access.
+6. Connect your ad accounts at https://adspirer.ai/connections.
 
-Custom connectors are reported to need a paid Perplexity plan, and admin permission in
-organizations. Menu labels change; check Perplexity's help center if yours differ.
+Custom connectors need a Perplexity Pro, Max or Enterprise plan. The full guide with screenshots
+is at https://www.adspirer.com/docs/ai-clients/perplexity.
 
 ## Use with the Perplexity Agent API
 
@@ -33,18 +35,26 @@ A Project administrator adds the server once on the Project connectors page in t
 ID. Requests reference it by ID; see [examples/agent_api.py](examples/agent_api.py) and
 [examples/agent_api.sh](examples/agent_api.sh).
 
-Open question: Perplexity's documentation lists **API Key or None** as the authentication choices
-for custom connectors in the API Console, and Adspirer Social Ads signs in with browser OAuth. This has not
-been tested. If OAuth is not offered there, ask Perplexity (api@perplexity.ai) before relying on
-the Agent API route; the app route above is the supported one.
+Authentication: Perplexity's API Console offers **API Key** or **None** for custom connectors.
+Use an Adspirer API key (starts with `sk_live_`), created at https://adspirer.ai/keys; it gives
+the same access as browser sign-in. Revoke it there when you no longer need it. This route has not
+been tested end to end.
 
 Agent API connector calls run **without approval by default**. This connector can change ad accounts, so the examples set an approval policy and you should keep one on every request.
 
 ## Add the skills
 
-Perplexity Computer is reported to import Agent Skills (`SKILL.md` folders); this has not been
-tested with these skills. Each skill is in `skills/` and zipped in `dist/skills/`. Where skills
-are not available, paste [AGENT.md](AGENT.md) into the Space or Computer instructions instead.
+Perplexity Computer supports Agent Skills:
+
+1. In Perplexity, open **Computer** and choose **Skills** in the left sidebar.
+2. Choose **+ Create skill** in the top-right corner.
+3. In the **Upload skill** dialog, upload a skill: the `SKILL.md` file from a folder in `skills/`,
+   or that skill's zip from `dist/skills/`, which also carries its `references/` files.
+4. The skill appears in your Skills list, and Perplexity applies it when a request matches.
+
+Upload `adspirer-social-ads-tools` first; the other skills refer to it. If you upload `SKILL.md` on its
+own, its `references/` files are not included, so prefer the zip. You can also paste
+[AGENT.md](AGENT.md) into a Space's instructions as a short always-on version.
 
 | Skill | Use it for |
 | --- | --- |
