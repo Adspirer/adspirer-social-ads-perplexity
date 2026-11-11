@@ -1,0 +1,41 @@
+{
+  "name": "Adspirer Social Ads",
+  "key": "adspirer-social-ads",
+  "host": "perplexity",
+  "version": "1.0.0",
+  "description": "Create Meta and TikTok ad campaigns. Research competitors, develop creative, analyze results, and optimize spending—with your approval.",
+  "mcp": {
+    "url": "https://mcp.adspirer.com/social-ads",
+    "transport": "streamable-http",
+    "auth": "oauth2 (browser sign-in, PKCE)"
+  },
+  "readOnly": false,
+  "category": "Marketing / Advertising",
+  "platforms": "Meta (Facebook and Instagram) and TikTok Ads",
+  "logo": "https://storage.googleapis.com/adspirer-images-v1/brand/adspirer-logo-square.png",
+  "homepage": "https://www.adspirer.com",
+  "support": "support@adspirer.com",
+  "docs": "https://www.adspirer.com/docs",
+  "privacy": "https://www.adspirer.com/privacy",
+  "terms": "https://www.adspirer.com/terms",
+  "connections": "https://adspirer.ai/connections",
+  "skills": [
+    "adspirer-connect-ad-accounts",
+    "adspirer-meta-ads",
+    "adspirer-paid-social",
+    "adspirer-product-help",
+    "adspirer-social-ad-creative",
+    "adspirer-social-ads-optimization",
+    "adspirer-social-ads-performance",
+    "adspirer-social-ads-tools",
+    "adspirer-social-campaign-launch",
+    "adspirer-social-competitor-research",
+    "adspirer-social-conversion-analysis",
+    "adspirer-tiktok-ads"
+  ],
+  "toolsSkill": "adspirer-social-ads-tools",
+  "derivedFrom": {
+    "repository": "https://github.com/Adspirer/adspirer-social-ads-cursor-plugin",
+    "version": "1.1.1"
+  }
+}
